@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADGGNL Previsões</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #161928;
+    }
+
+    form {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #292727;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: #fff;
+    }
+
+    label,
+    input {
+      display: block;
+      margin: 10px 0;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #e61919;
+    }
+
+    header img {
+      width: 10%;
+      /* Define uma largura específica */
+      height: 10%;
+      /* Define uma altura específica */
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <img
+      src="https://cdn.discordapp.com/attachments/1135931298855260261/1158830120992264293/vedovato__tech_company_stock_market_logo_flat_vector_simple_min_65810513-b0b1-478e-92f6-d1ab788caaa5.png?ex=651dac26&is=651c5aa6&hm=dcef3e281f3958e6a8c0eb5b705df121015ac1062ac1018adb6b86c022c4f21c&"
+      alt="Logo">
+  </header>
+<form action="/processar" method="post">
+        <label for="acao">Selecione a ação:</label>
+        <select id="acao" name="acao">
+            <option value="AAPL">Apple (AAPL)</option>
+            <option value="AMZN">Amazon (AMZN)</option>
+            <option value="NFLX">Netflix (NFLX)</option>
+        </select>
+        <!-- Adicione um menu suspenso para a seleção do datasheet -->
+
+        <input type="submit" value="Calcular Previsão">
+</form>
+  <!-- Adicione esta seção ao seu HTML -->
+  <br></br>
+  <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container" style="margin: auto;">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com/" rel="noopener nofollow"
+        target="_blank"><span class="blue-text">Monitore todos os mercados no TradingView</span></a></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"
+      async>
+        {
+          "symbols": [
+            [
+              "NASDAQ:NFLX|1D"
+            ]
+          ],
+            "chartOnly": false,
+              "width": 1000,
+                "height": 500,
+                  "locale": "br",
+                    "colorTheme": "dark",
+                      "autosize": true,
+                        "showVolume": false,
+                          "showMA": false,
+                            "hideDateRanges": false,
+                              "hideMarketStatus": false,
+                                "hideSymbolLogo": false,
+                                  "scalePosition": "right",
+                                    "scaleMode": "Normal",
+                                      "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                                        "fontSize": "10",
+                                          "noTimeScale": false,
+                                            "valuesTracking": "1",
+                                              "changeMode": "price-and-percent",
+                                                "chartType": "area",
+                                                  "maLineColor": "#2962FF",
+                                                    "maLineWidth": 1,
+                                                      "maLength": 9,
+                                                        "lineWidth": 2,
+                                                          "lineType": 0,
+                                                            "dateRanges": [
+                                                              "1d|1",
+                                                              "1m|30",
+                                                              "3m|60",
+                                                              "12m|1D",
+                                                              "60m|1W",
+                                                              "all|1M"
+                                                            ]
+        }
+      </script>
+  </div>
+  <!-- TradingView Widget END -->
+  <br></br>
+  <footer style="color: #fff;">
+    &copy; ADGGNL
+  </footer>
+</body>
+
+</html>

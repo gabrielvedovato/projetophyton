@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráficos de Ações</title>
+</head>
+<body>
+    <!-- Para cada gráfico, utilize uma tag <img> com o atributo src configurado para o formato base64 do gráfico -->
+    <h1>Gráficos de Ações</h1>
+
+    <!-- Iterando sobre os gráficos na lista graficos_bytes -->
+    {% for img in graficos_bytes %}
+        {% if loop.index <= 6 %}
+            <div>
+                <h2>Evolução dos Valores das Ações - Mês {{ loop.index }}</h2>
+                <!-- Atribuindo cada imagem à tag <img> -->
+                <img src="data:image/png;base64, {{ img }}" alt="Gráfico {{ loop.index }}">
+            </div>
+        {% else %}
+            {% if loop.index == 7 %}
+                <div>
+                    <h2>Evolução dos Valores das Ações - Visão Geral</h2>
+                </div>
+            {% endif %}
+            <img src="data:image/png;base64, {{ img }}" alt="Gráfico {{ loop.index }}">
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>
